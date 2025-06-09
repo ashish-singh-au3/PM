@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 280 10% 10%;
+  --muted: 280 10% 95%;
+  --muted-foreground: 280 5% 45%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 280 10% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 280 10% 10%;
+  --border: 280 10% 90%;
+  --input: 280 10% 90%;
+  --primary: 270 60% 40%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 280 30% 96%;
+  --secondary-foreground: 280 10% 10%;
+  --accent: 270 90% 50%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 270 90% 50%;
+  --radius: 0.5rem;
+  --chart-1: 270 90% 50%;
+  --chart-2: 270 60% 40%;
+  --chart-3: 280 10% 95%;
+  --chart-4: 270 40% 60%;
+  --chart-5: 280 30% 70%;
+}
+
+.dark {
+  --background: 280 10% 5%;
+  --foreground: 0 0% 98%;
+  --muted: 280 10% 15%;
+  --muted-foreground: 280 5% 65%;
+  --popover: 280 10% 5%;
+  --popover-foreground: 0 0% 98%;
+  --card: 280 10% 5%;
+  --card-foreground: 0 0% 98%;
+  --border: 280 10% 15%;
+  --input: 280 10% 15%;
+  --primary: 270 70% 60%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 280 10% 15%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 270 90% 60%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 280 10% 65%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-['Nunito'] antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-r from-violet-800 via-violet-600 to-violet-900;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-600 to-violet-900 bg-clip-text text-transparent;
+  }
+  
+  .skill-bar {
+    @apply h-2 rounded-sm bg-secondary overflow-hidden;
+  }
+  
+  .skill-progress {
+    @apply h-full rounded-sm bg-gradient-to-r from-violet-600 to-violet-900;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold relative inline-block;
+  }
+  
+  .section-title::after {
+    @apply content-[''] absolute bottom-0 left-0 w-1/2 h-1 bg-accent;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
